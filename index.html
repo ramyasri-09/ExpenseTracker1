@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button>
+        <h2>Expense Tracker</h2>
+
+        <h3>Your Balance: <span id="balance">$0.00</span></h3>
+
+        <div class="income-expense">
+            <div class="income">
+                <h4>Income</h4>+
+                <p id="money-plus" class="money plus">$0.00</p>
+            </div>
+            <div class="expense">
+                <h4>Expense</h4>
+                <p id="money-minus" class="money minus">$0.00</p>
+            </div>
+        </div>
+
+        <input type="text" id="search" placeholder="Search transactions..." />
+
+        <h3>Transactions</h3>
+        <ul id="transaction-list" class="list"></ul>
+
+        <h3>Add New Transaction</h3>
+        <form id="form">
+            <label for="text">Description</label>
+            <input type="text" id="text" placeholder="Enter description..."><br>
+
+            <label for="amount">Amount (negative - expense, positive - income)</label>
+            <input type="number" id="amount" placeholder="Enter amount..."><br>
+
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="Food">Food</option>
+                <option value="Rent">Rent</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Travel">Travel</option>
+            </select><br>
+
+            <button class="btn">Add Transaction</button>
+        </form>
+
+        <canvas id="expenseChart"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
